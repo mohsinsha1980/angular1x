@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>AngularJS</title>
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/app.js"></script>
+	<style>
+		
+	</style>
+</head>
+
+<body>
+	<div ng-app="app">
+		<dad></dad>
+	</div>
+	<input type="text" id="num" value="" onblur="funBlur()">
+	<script>
+		function funBlur(){
+			var txt = document.getElementById('num');
+			if(isNaN(txt.value)){
+				alert('only numbers');
+				txt.value="";
+				txt.focus();
+			}
+		};
+	</script>
+</body>
+</html>
