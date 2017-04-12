@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="proFormatsApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise</title>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="productFormatController"><div id="other_formats" class="panel panel_chrome">
+				<div class="panel_header">
+					<h3>Other Formats</h3>
+				</div>
+				<div class="panel_content">
+					<table summary="A table listing various other formats for this product">
+						<thead>
+						<tr>
+							<th scope="col"></th>
+							<th scope="col" class="site amount"><span>price</span></th>
+							<th scope="col" class="market_place amount"><span>New from</span></th>
+							<th scope="col" class="market_place amount"><span>Used from</span></th>
+							<th scope="col" class="market_place amount"><span> </span></th>
+							<th scope="col" class="market_place amount"><span> </span></th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr ng-repeat="trow in trows">
+							<th scope="col"><a href="#">{{trow.name}}</a></th>
+							<td scope="col" class="site amount"><span>R&nbsp;{{trow.price}}</span></td>
+							<td scope="col" class="market_place amount"><span>R&nbsp;{{trow.newfrom}}</span></td>
+							<td scope="col" class="market_place amount"><span>R&nbsp;{{trow.usedfrom}}</span></td>
+							<td scope="col" class="market_place amount"><span class="glyphicon glyphicon-edit" ng-click="updateDetails()"></span></td>
+							<td scope="col" class="market_place amount"><span class="glyphicon glyphicon-remove" ng-click="removeNamerow(trow.name)"></span></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="panel-inputs">
+				<div>
+				<input ng-model="nname" type="text"><input ng-model="price" type="text"><input ng-model="newfrom" type="text"><input ng-model="usedfrom" type="text">
+				</div>
+				<div><button class="btn btn-default" ng-click="addNamerow()" ng-show="showAddButton">Add New Row</button>
+				<button class="btn btn-default" ng-show="showUpdate">Update Details</button></div>
+				<div ng-show="errMsg" style="color:red">Please enter values in the fields</div>
+			</div>
+<script src="js/jquery.1.10.2.js"></script>
+<script src="js/angular.min.1.4.3.js"></script>	
+<script src="js/proFormatsController.js"></script>		
+</body>
+</html>

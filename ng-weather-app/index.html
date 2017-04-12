@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="weatherApp">
+<head>
+	<meta charset="utf-8" />
+	<title>AngularJS</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		html, body, input, select, textarea{ font-size: 1.05em !important; }
+	</style>
+	<script src="lib/jquery-2.1.4.js"></script>
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-route.min.js"></script>
+	<script src="lib/angular-resource.min.js"></script>
+	<script src="lib/app.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#">AngularJs Weather</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav">
+				<li><a href="#/">Home</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+	</header>
+	<div class="container">
+		<ng-view></ng-view>
+	</div>
+</body>
+</html>

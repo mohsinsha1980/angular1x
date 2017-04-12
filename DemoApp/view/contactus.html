@@ -1,0 +1,40 @@
+<div data-ng-controller="contactusController">
+
+<div style="padding:20px">
+	<div>
+	  <div class="form-group">
+		<label>States:</label>
+		<select data-ng-model="state.code" data-ng-change="showAddress()">
+			<option value=""></option>
+			<option data-ng-repeat="item in stateList" value="{{ item.stateCd }}">{{item.stateDesc }}</option>
+		<select>
+	  </div>
+	  <div class="form-group">
+		<label>ATM Address :</label>
+		<table>
+		  <tr>
+			<th>State</th>
+			<th>City</th>
+		  </tr>
+		  <tr data-ng-repeat="stateList in address">
+			<td>{{stateList.state}}</td>
+			<td>
+				<table>
+					<tr data-ng-repeat="cityList in stateList.city">
+						<td>{{cityList.name}}</td>
+						<td>
+							<table>
+								<tr data-ng-repeat="ATMList in cityList.ATM">
+									<td style="border-bottom:1px dotted">{{ATMList.Location}}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		  </tr>
+		</table>
+	  </div>
+	 </div> 
+</div>
+</div>

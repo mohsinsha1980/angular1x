@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html ng-app="plunker">
+<head>
+<meta charset="utf-8" />
+<title>AngularJS Plunker</title>
+<script>
+document.write('<base href="' + document.location + '" />');
+</script>
+<link href="style.css" rel="stylesheet" />
+<script src="jquery-2.1.4.js"></script>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+<div class="loader" style="position:absolute; left: 0; top: 0; width: 100%; height: 100%; color: #fff; background: rgba(0,0,0,0.9);">Loading</div>
+<p ng-repeat="name in names">Hello {{ name.firstname }} {{ name.lastname | uppercase }}!</p>
+<table border="1" style="border-collapse: collapse;">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+  <tr ng-repeat="name in names" ng-if="responseData === true">
+    <td>{{ name.firstname }}</td>
+    <td>{{ name.lastname }}</td>
+  </tr>
+  <tr ng-if="responseData === false">
+    <td colspan="2">{{ firstname }}</td>
+  </tr>
+</table>
+</body>
+</html>

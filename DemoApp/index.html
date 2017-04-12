@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="js/angular-min.js"></script>
+<script src="js/ui-bootstrap-min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-min.css">
+<script src="js/jquery-slider-min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/header.css">
+<body ng-app="demoApp">
+
+<div>
+ 	<div class="top-section">
+		<div>
+			<span>citi india</span>
+		</div>
+		<div class="right-section">
+			<div>
+				<span><a href="#/home">HOME</a></span>
+			</div>
+			<div>
+				<span><a href="#/contactus">CONTACT US</a></span>
+			</div>
+			<div>
+				<div style="background-color:#FFFFFF;margin-right:-20px;margin-top:2px">
+					<span class="search-icon"></span>
+				</div>
+				<div>
+					<input type="text" />
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="middle-section">
+		<div>
+			<div class="citi-logo"></div>
+		</div>
+	</div>
+	<div class="bottom-section" data-ng-controller="demoAppController">
+		<div class="drop-down-menu-div">
+			<div class="btn-group" uib-dropdown is-open="status.isopen1">
+				  <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+					loan <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+					<li role="menuitem"><a href="#/loan" data-ng-click="showLoanSection($event,'PL')">Personal Loan</a></li>
+					<li role="menuitem"><a href="#/creditCardLoan" data-ng-click="showLoanSection($event,'CEL')">Loan on your Credit</a></li>
+			      </ul>
+			</div>
+		</div>
+		<div class="drop-down-menu-div">
+			<div class="btn-group" uib-dropdown is-open="status.isopen2">
+				  <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+					Online Services <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+					<li role="menuitem"><a href="#/internetBanking" data-ng-click="showBankingSection($event,'IN')">Internet Banking</a></li>
+					<li role="menuitem"><a href="#/mobileBanking" data-ng-click="showBankingSection($event,'MO')">Citi Mobile</a></li>
+			      </ul>
+			</div>
+		</div>
+		<div class="ui-button">
+			<button type="button" class="btn btn-primary" data-ng-controller="ModalDemoCtrl" data-ng-click="open('md')">Login</button>
+		</div>
+	</div>
+</div>
+ <div ng-view></div>
+
+<script src="js/angular-route-min.js"></script>
+<script src="controller/loginModal.js"></script>
+<script src="js/demoApp.js"></script>
+<script src="controller/home.js"></script>
+<script src="controller/contactus.js"></script>
+<script src="controller/personaLoan.js"></script>
+<script src="controller/creditCardLoan.js"></script>
+<script src="service/commonservice.js"></script>
+</body>
+</html>

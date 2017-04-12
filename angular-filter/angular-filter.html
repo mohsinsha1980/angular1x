@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Angular Filter</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script>
+		var ngApp = angular.module('ngApp', []);
+		ngApp.controller('myGallery', ['$scope', function($scope){
+			$scope.categories = [{type: 1, name: 'Home'}, {type:2, name: 'Art'}, {type:1, name: 'Kids'}];
+		}]);
+
+	</script>
+  </head>
+  <body>
+	<div ng-app="ngApp">
+		<div ng-controller="myGallery">
+			<div ng-init="myFilter = 1">
+				<div>
+					<span ng-click="myFilter = {type: 1}">Home</span> |
+					<span ng-click="myFilter = {type: 2}">Art</span> |
+					<span ng-click="myFilter = null">No filter</span>
+				</div>
+			</div>
+			<ul>
+				<li ng-repeat="category in categories | filter:myFilter">{{category.name}}</li>
+			</ul>
+		</diu>
+	</div>
+    
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>AngularJS Plunker</title>
+<style>
+	h2 {
+    cursor: pointer;
+	}
+	.directive {
+		border: 5px solid #F5BF6E;;
+		padding: 10px;
+	}
+</style>
+<script src="jquery-2.1.4.js"></script>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body>
+    <div ng-app="app">
+    	<div class="parent" ng-controller="MainCtrl">
+    		<div class="line">
+    			Name inside parent scope is: <strong>{{name}}</strong>  
+    			<input type="button" ng-click="reverseName()" value="Reverse name" />
+    		</div> 
+    		<div class="line">
+    			Color inside parent scope is: <strong style="color:{{color}}">{{color|uppercase}}</strong>  
+    			<input type="button" ng-click="randomColor()" value="Randomize color" />
+    		</div>
+    		<div class="directive" my-directive parent-name="{{name}}" color="color" reverse="reverseName()"></div>
+    	</div>
+    </div>
+</body>
+</html>

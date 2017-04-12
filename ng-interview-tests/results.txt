@@ -1,0 +1,42 @@
+sayandeep-basu  ------
+ HTML/CSS - 0/5
+ Javascript - 2/5
+ Angular - 2/5
+
+mohini-narwade  ------
+ HTML/CSS - 0/5
+ Javascript - 2/5
+ Angular - 3/5
+
+manish-roy  ------
+ HTML/CSS - 0/5
+ Javascript - 2/5
+ Angular - 3/5
+ 
+abhishek-gautam  ------
+ HTML/CSS - 0/5
+ Javascript - 2.5/5
+ Angular - 2.5/5
+
+
+
+ 
+ ashutosh-biyani
+ HTML/CSS - 2.5/5
+ Javascript - 2.5/5
+ Angular - 2.5/5
+ 
+ Himanshu_Verma
+ HTML/CSS - 2.5/5
+ Javascript - 2/5
+ Angular - 2.5/5
+  
+ sumit-shukla
+ HTML/CSS - 2.5/5
+ Javascript - 2/5
+ Angular - 2.5/5
+ 
+ syed-mehdi-abbas
+ HTML/CSS - 0/5
+ Javascript - 2/5
+ Angular - 2/5

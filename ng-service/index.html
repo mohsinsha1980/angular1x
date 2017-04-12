@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>Angular Service</title>
+</head>
+
+<body>
+<div ng-controller="myCtrl">
+	<p>{{content}}</p>
+</div>
+<script src="angular.min.js"></script>
+<script>
+	var myApp = angular.module('myApp', []);
+
+	myApp.controller('myCtrl', ['$scope', 'myServ', function($scope, myServ){
+		$scope.content = myServ.serviceText();
+	}]);
+	
+	myApp.service('myServ', function(){
+		this.serviceText = function(){
+			return 'This text is coming through service!';
+		}
+	});
+</script>
+</body>
+</html>

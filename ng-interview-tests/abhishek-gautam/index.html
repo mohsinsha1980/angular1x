@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exercise</title>
+<meta name="description" content="" />
+<link rel="shortcut icon">
+<link rel="stylesheet" href="css/style.css"
+	media="screen, projection, handheld, tv">
+	 <link rel="stylesheet" href="css/bootstrap.min.css"
+	media="screen, projection, handheld, tv"> 
+<script src="js/angular.min.js"></script>
+<script src="js/controllers/angularController.js"></script>
+<script src="js/services/dataTableService.js"></script>
+<script src="js/directives/tableDirective.js"></script>
+</head>
+<div id="testAngularApp"
+	data-ng-controller="MasterController"
+	class="panel panel_chrome">
+	<div class="panel_header">
+		<h3>Other Formats</h3>
+	</div>
+
+	
+	
+			<custom-table-widget table-data="items"></custom-table-widget>
+			
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	angular.element(document).ready(
+			function() {
+				angular.bootstrap(
+						document.getElementById("testAngularApp"),
+						["testAngularApp"]);
+			});
+</script>
+
+</html>

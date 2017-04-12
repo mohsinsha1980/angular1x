@@ -1,0 +1,96 @@
+.top-section {
+background : url('../images/topMenu.jpg') repeat-x top;
+height:20px;
+width:100%;
+}
+.top-section  span{
+color:#FFFFFF;
+font-size:12px;
+}
+.top-section  div{
+float : left;
+margin-left : 20px;
+}
+.right-section {
+float:right !important;
+}
+.right-section  input{
+height:19px;
+margin-right : 20px;
+}
+.search-icon  {
+	background : url('../images/searchicon.png') no-repeat 0 2px;
+	margin-right:0px;
+    float: left;
+    height: 17px;
+    width: 16px;
+}
+.middle-section {
+background : url('../images/banner.jpg') repeat-x top;
+height:70px;
+width:100%;
+padding:10px 0 0 10px;
+}
+.citi-logo {
+background : url('../images/logo1.png')  no-repeat 0 2px;
+height:70px;
+width:70px;
+}
+.bottom-section{
+background-color : #428bca;
+height:36px;
+width:100%;
+}
+.drop-down-menu-div{
+margin-left:30px;
+float:left;
+}
+.ui-button {
+float:right;
+margin-right:20px;
+
+}
+.home-div{
+background-color:#D3D3D3;
+padding:20px;
+}
+.left-menu {
+float:left;
+top: 10px; 
+left: 20px;
+height:490px;
+width:22%;
+border:1px solid;
+ border-radius: 25px;
+ padding:10px;
+}
+.left-menu select{
+    width: 240px;
+    height: 30px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }

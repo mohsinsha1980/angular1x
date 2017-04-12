@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8" />
+<title>AngularJS Plunker</title>
+<script src="jquery-2.1.4.js"></script>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<style>
+	.gray{ background-color: rgba(0,0,0,0.2); }
+	p{ padding: 5px; }
+</style>
+</head>
+
+<body>
+	<div ng-controller="myCtrl">
+    </div>
+    
+	<custom-directive-one title=".....manipulated the isolated scope!"></custom-directive-one> <!-- Custom directive with Element -->
+    <div custom-directive-two></div> <!-- Custom directive with Attribute -->
+    <div class="custom-directive-three"></div> <!-- Custom directive with Class -->
+    <!-- directive: custom-directive-fourth --> <!-- Custom directive with Comment -->
+</body>
+</html>

@@ -1,0 +1,124 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #4a4a4d;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+ th,
+td {
+  padding: 10px 15px;
+  vertical-align: middle;
+}
+ thead {
+  #background: #f0f0f2;
+  #background: linear-gradient(#f0f0f2, #f0f0f2);
+  color: #000;
+  font-size: 12px;
+}
+
+ th:first-child {
+  border-top-left-radius: 9px;
+  text-align: left;
+}
+ th:last-child {
+  border-top-right-radius: 9px;
+}
+
+ td {
+  border-bottom: 1px solid #cecfd5;
+  border-right: 1px solid #cecfd5;
+}
+ td:first-child {
+  border-left: 1px solid #cecfd5;
+}
+
+ .tr-rounded {
+  border-bottom-right-radius: 9px;  
+  border-bottom-left-radius: 9px;
+}
+.edit {
+  background-image: url(../images/edit.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.del{
+  background: url("../images/del.png");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+ .header-row-left{
+        background: #f0f0f2;
+        border-top-left-radius: 9px;
+	border-left: 1px solid #cecfd5;
+        border-top: 1px solid #cecfd5;
+        border-bottom: 1px solid #cecfd5;
+}
+ .header-row-right{
+        background: #f0f0f2;
+        border-top-right-radius: 9px;
+	border-right: 1px solid #cecfd5;
+        border-top: 1px solid #cecfd5;
+        border-bottom: 1px solid #cecfd5;
+}
+ .header-row-mid{
+        background: #f0f0f2;
+        border-top: 1px solid #cecfd5;
+        border-bottom: 1px solid #cecfd5;
+}
+ .book-title {
+  color: #49708f;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.7pt;
+}
+ .text-offset {
+  color: #7c7c80;
+  font-size: 12px;
+}
+ .item-stock,
+ .item-qty {
+  text-align: center;
+}
+ .item-price {
+  text-align: right;
+}
+ .item-multiple {
+  display: block;
+}
+.btn{
+border-radius:6px;
+background:#f0f0f2;
+border:1px solid #cecfd5;
+cursor:pointer;
+color: #49708f;
+width:16%;
+height:28px;
+font-weight: bold;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.input-amt{
+	height:28px;
+        border:1px solid #cecfd5;
+        border-radius:6px;
+}
+.input-td{
+	border:0px;
+        padding-left:10px;
+        width:15%;
+}
+
+ tfoot {
+  text-align: right;
+}
+ tfoot tr:last-child {
+  background: #f0f0f2;
+  color: #395870;
+  font-weight: bold;
+}
+ tfoot tr:last-child td:first-child {
+  border-bottom-left-radius: 9px;
+}
+ tfoot tr:last-child td:last-child {
+  border-bottom-right-radius: 9px;
+} 

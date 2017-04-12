@@ -1,0 +1,34 @@
+[
+  {
+    "productId": 1,
+    "id": 1,
+    "name": "Hardcover",
+    "price": 200.50,
+    "new":  240.00,
+    "used": 180.50
+  },
+ {
+    "productId": 2,
+    "id": 2,
+    "name": "Paperback",
+    "price": 300.00,
+    "new": 320.80,
+    "used": 270.60
+  },
+ {
+    "productId": 3,
+    "id": 3,
+    "name": "Audio, CD, Audiobook, Unabridged",
+    "price":  150.60,
+    "new": 180.00,
+    "used": 120.75
+  },
+ {
+    "productId": 4,
+    "id": 4,
+    "name": "Unknown Binding",
+    "price": 430.35,
+    "new":  450.00,
+    "used": 417.25
+  }
+]

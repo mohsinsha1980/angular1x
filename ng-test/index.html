@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8" />
+	<title>AngularJS</title>
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/app.js"></script>
+	<style>
+		
+	</style>
+</head>
+
+<body>
+	<div class="container" ng-controller="mainCtrl">
+		<table>
+			<tr>
+				<th>Sr. No.</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Age</th>
+				<th>Actions</th>
+			</tr>
+			<tr ng-repeat="x in people">
+				<td>{{ $index+1 }}</td>
+				<td>{{ x.firstName }}</td>
+				<td>{{ x.lastName }}</td>
+				<td>{{ x.age }}</td>
+				<td><a href="javascript:;" ng-click="edit($index)">Edit</a> | <a href="javascript:;" ng-click="delete($index)">Delete</a></td>
+			</tr>
+		</table>
+		<div class="form">
+			<input type="text" placeholder="First Name" ng-model="fname"><input type="text" placeholder="Last Name" ng-model="lname"><input type="text" placeholder="Age" ng-model="age">
+			<button ng-click="frmButton(indexNo)">{{ btnText }}</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exercise</title>
+<meta name="description" content="" />
+<link rel="shortcut icon">
+<link rel="stylesheet" href="css/style.css"
+	media="screen, projection, handheld, tv">
+	 <link rel="stylesheet" href="css/bootstrap.min.css"
+	media="screen, projection, handheld, tv"> 
+	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+</head>
+<div id="cssAngularExcersieApp"
+	data-ng-controller="cssAngularExcersieController"
+	class="panel panel_chrome">
+	<div class="panel_header">
+		<h3>Other Formats</h3>
+	</div>
+
+	
+	
+			<table-for-listing-directive chats="items" edit="editData(item);"></table-for-listing-directive>
+			
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	angular.element(document).ready(
+			function() {
+				angular.bootstrap(
+						document.getElementById("cssAngularExcersieApp"),
+						[ "cssAngularExcersieApp" ]);
+			});
+			
+			
+			/**
+ *  Controller
+ */
+ 
+ var cssAngularExcersieApp = angular.module('cssAngularExcersieApp', []);
+ cssAngularExcersieApp.controller('cssAngularExcersieController', [ '$scope', 'TableDataService', AngularExcersieController ]);
+ cssAngularExcersieApp.controller('TableDataController', [ '$scope',  TableDataController ]);
+
+		
+ function AngularExcersieController($scope, TableDataService) {
+	 
+	 //var self =this;
+	 
+	 
+	 $scope.items=[];
+	 
+	 TableDataService.getTableData($scope).then(function(arrItems){
+		 console.log('items::' + JSON.stringify(arrItems));
+		 $scope.items=arrItems;
+		 console.log('items::' + JSON.stringify($scope.items));
+			//$scope.$apply();
+		});
+		
+		
+	 /*
+	  $scope.addRow = function(valid){	
+                                                        			// alert('--'+valid);
+                                                        			 if(valid)
+                                                        				 {
+                                                        				$scope.dataDetails.push({ 'otherFormats':$scope.otherFormats, 'price': $scope.price, 'newFrom':$scope.newFrom,'usedFrom':$scope.usedFrom });
+                                                        				$scope.otherFormats='';
+                                                        				$scope.price='';
+                                                        				$scope.newFrom='';
+                                                        				$scope.usedFrom='';
+                                                        				 }
+                                                        			 
+                                                        			                                                       				
+                                                        			};
+                                                        			 $scope.editData = function(){
+                                                            			
+                                                            				 $scope.buttonText='Edit New Row';
+                                                            			 }*/
+	 
+ }
+ 
+
+
+ function TableDataController($scope){
+	 
+	 
+	 var self = this;
+	 self.chats=[];
+	 self.inputData = {
+				price :  '',
+				newFrom : '',
+				usedFrom : '',
+				otherFormats:''
+			};
+	 
+	 self.buttonText="Add New Row";
+	 
+	 self.addNewRow = function(){
+		if(self.inputData.price != '' && self.inputData.newFrom != '' 
+			&& self.inputData.usedFrom != '' && self.inputData.otherFormats ){
+		self.modifiedInputData = {
+				
+				price :  'R ' + self.inputData.price,
+				newFrom : 'R ' + self.inputData.newFrom,
+				usedFrom : 'R ' + self.inputData.usedFrom,
+				otherFormats: self.inputData.otherFormats
+				
+		}
+		 $scope.chats.push(self.modifiedInputData);
+		 self.reset();
+		}
+		else
+			alert('Please enter the required fields');
+	 }
+		
+	 
+	 self.deleteRow= function(item){
+		 console.log('item:::' + JSON.stringify(item));
+		
+		 var index = $scope.chats.indexOf(item);
+		 $scope.chats.splice( index, 1 );
+		 self.reset();
+	 }
+	 
+	 self.reset = function(){
+		 self.inputData = {
+					price :  '',
+					newFrom : '',
+					usedFrom : '',
+					otherFormats:''
+				};
+		 
+	 }
+	 
+	 self.editData= function(item){
+		// console.log('item:::' + JSON.stringify(item));
+		 var index = $scope.chats.indexOf(item);
+		 self.inputData.price = $scope.chats[index].price.slice(0,$scope.chats[index].price.length);
+		 self.inputData.newFrom = $scope.chats[index].newFrom;
+		 self.inputData.usedFrom = $scope.chats[index].usedFrom;
+		 self.inputData.otherFormats = $scope.chats[index].otherFormats;
+		 self.buttonText="Update Details";
+	 }
+	 
+	 self.newData=function(str){
+		 alert('call me' + str);
+	 }
+	 
+ } 
+ 
+ 
+ /**
+ * Service 
+ */
+ 
+ 
+ 
+ cssAngularExcersieApp
+.factory(
+		'TableDataService',
+		[
+				'$http',
+				'$q',
+				function($http, $q) {
+					var deferred = $q.defer();
+
+					return {
+
+						getTableData :  function($scope) {
+							//console.log('societyId:::' + societyId)
+							return $http
+									.get('data.json', {params:{}})
+									.then(
+											function(response) {
+												console.log("actual response:::" + JSON.stringify(response.data));
+												return $q.resolve(response.data);
+											},
+											function(errResponse) {
+												console
+														.error('Error while fetching table data object');
+												return $q
+														.reject(errResponse);
+											});
+						}
+
+					};
+
+				} ]);
+				
+				
+				
+				
+				// directive
+				
+				/**
+ * 
+ */
+  
+ 'use strict';
+
+
+cssAngularExcersieApp.directive('tableForListingDirective', function () {
+        return {
+            restrict: 'EA',
+            template: [  
+                       '<div ng-controller="TableDataController as tCtrl" ng-form name="myForm">',
+                    '<div class="panel_content">',
+                    '<table summary="A table listing various other formats for this product">',
+       				'<thead>',
+       				'<tr>',
+       				'<th scope="col"></th>',
+       				'<th scope="col" class="site amount"><span>price</span></th>',
+       				'<th scope="col" class="market_place amount"><span>New from</span></th>',
+       				'<th scope="col" class="market_place amount"><span>Used from</span></th>',
+       				'<th scope="col" class="market_place amount"><span>Edit</span></th>',
+       				'<th scope="col" class="market_place amount"><span>Delete</span></th>',
+       				'</tr>',
+       				'</thead>',
+       				'<tbody>',
+                       '<tr class="active" ng-repeat="item in chats">',
+                       '<th scope="col"><a>{{item.otherFormats}}</a></th>',
+       				'<td scope="col" class="site amount"><span>{{item.price}}</span></td>',
+       				'<td scope="col" class="market_place amount"><span>{{item.newFrom}}</span></td>',
+       				'<td scope="col" class="market_place amount"><span>{{item.usedFrom}}</span></td>',
+       				'<td scope="col" class="market_place amount">',
+       				'<span>',
+       				'<button type="button" data-ng-click="tCtrl.editData(item);"><img style="height:20px;width:20px;" src="./img/edit.png" ></button>',
+       				'</span>',
+       				'</td>',
+       				'<td scope="col" class="market_place amount">',
+       				'<span>',
+       				'<button type="button" data-ng-click="tCtrl.deleteRow(item);"><img style="height:20px;width:20px;" src="./img/remove.png" ></button>',
+       				'</span>',
+       				'</td>',
+                    '</tr>',
+                    '</tbody>',
+       				'</table>',
+                    '</div>',
+                    '<div class="panel-inputs">',
+                    '<div>',
+       				'<input type="text" style="width:40%" name="inOtherFormats" ng-model="tCtrl.inputData.otherFormats" name="otherFormats" required/>',
+       				'<input type="text" style="width:13%" name="inPrice" ng-model="tCtrl.inputData.price" name="price" required/>',
+       				'<input type="text" style="width:13%" name="inNewFrom" ng-model="tCtrl.inputData.newFrom" name="newFrom" required/>',
+       				'<input type="text" style="width:13%"  name="inUsedFrom" ng-model="tCtrl.inputData.usedFrom" required/>',
+       				'</div>',
+       				'<div><button type="submit" class="" data-ng-click="tCtrl.addNewRow();">{{tCtrl.buttonText}}</button></div>',
+       				'</div>'
+       		    ].join(''),
+            scope: {
+            	chats:"="
+            },
+           controller:'TableDataController',
+           controllerAs:'tCtrl',
+            link: function (scope, element, attrs) {
+                scope.chats=scope.$eval(attrs.chats);
+                //console.log('tableitem:::' +JSON.parse(attrs.tableitem));
+            },
+        }
+    });
+ 
+ 
+</script>
+
+</html>

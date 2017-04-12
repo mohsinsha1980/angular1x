@@ -1,0 +1,67 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>Angular Service</title>
+<script src="angular.min.js"></script>
+</head>
+
+<body>
+<div>
+    <div ng-controller="myCtrl">
+    	<h1>{{heading}}</h1>
+    	<ul>
+        	<li ng-repeat="person in people | orderBy: '-age'">
+            	Name: {{person.name}}, Age: {{person.age}}
+            </li>
+        </ul>
+        <form novalidate name="myForm" ng-submit="myForm.$valid && addName()">
+        	<input type="text" placeholder="Name" ng-model="name" name="name" style="margin-bottom: 5px;" required><br>
+            <span ng-if="myForm.name.$invalid">The name is required.</span><br>
+            
+            <input type="number" placeholder="age" ng-model="age" style="margin-bottom: 5px;" required><br>
+            <span ng-if="myForm.name.$invalid">The age is required.</span><br>
+            <span ng-if="myForm.name.$dirty">The age is not valid.</span><br>
+            
+            <button type="submit" ng-disabled="myForm.$invalid" ng-click="addName()">Add Entry</button>
+            <button type="reset" ng-click="resetFrm()">Cancel</button>
+        </form>
+        <button ng-click="checkNames()">Check Names</button> <em>Check console log</em><br>
+    </div>
+</div>
+<script>
+	var myApp = angular.module('myApp', []);
+	
+	myApp.controller('myCtrl', ['$scope', function($scope) {
+		$scope.heading = "Simple Names App";
+		$scope.people = [
+			{name: 'John', age: 26},
+			{name: 'Tony', age: 29},
+			{name: 'Rohit', age: 33},
+			{name: 'Mohit', age: 35}
+		];
+		$scope.peopleNew = [];
+		$scope.addName = function(){
+			if($scope.name !='' || $scope.age != ''){
+				$scope.people.push({name: $scope.name, age: $scope.age});
+				$scope.peopleNew.push({name: $scope.name, age: $scope.age});
+				$scope.name = '';
+				$scope.age = '';
+				console.log($scope.peopleNew);
+			}
+			else{
+				alert('Field(s) are empty!');
+				return false;
+			}
+		};
+		$scope.resetFrm = function(){
+			$scope.myForm.$reset();
+		};
+		$scope.checkNames = function(){
+			console.log($scope.people);
+		};
+	}]);
+	
+</script>
+</body>
+</html>

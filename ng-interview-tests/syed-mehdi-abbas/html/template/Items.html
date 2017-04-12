@@ -1,0 +1,33 @@
+					<table summary="A table listing various other formats for this product">
+						<thead>
+						<tr>
+							<th scope="col"><span>Other Formats</span></th>
+							<th scope="col" class="site amount"><span>price</span></th>
+							<th scope="col" class="market_place amount"><span>New from</span></th>
+							<th scope="col" class="market_place amount"><span>Used from</span></th>
+							<th scope="col" class="market_place amount"><span>Edit</span></th>
+							<th scope="col" class="market_place amount"><span>Delete</span></th>
+						</tr>
+						</thead>
+						<tbody>
+                             <tr ng-repeat="product in products">                                
+						<td scope="col">{{product.name}}</td>
+				      <td scope="col" class="site amount"><span>R&nbsp;{{product.price}}</span></td>
+					<td scope="col" class="market_place amount"><span>R&nbsp;{{product.new}}</span></td>
+					<td scope="col" class="market_place amount"><span>R&nbsp;{{product.used}}</span></td>
+                           <td scope="col" class="market_place amount"><span ng-click="editProduct(product.productId)">Edit</span></td>
+					<td scope="col" class="market_place amount"><span ng-click="deleteProduct(product.productId)">X</span></td>
+                           </tr>
+                           <tr>
+					<th scope="col" ><input id="name" ng-model="newproduct.name" type="text"/></th>
+				     <td scope="col" class="market_place amount"><input id="price" ng-model="newproduct.price" type="text"/></td>
+							<td scope="col" class="market_place amount"><input id="new" ng-model="newproduct.new" type="text"/></td>
+							<td scope="col" class="market_place amount"><input id="used" ng-model="newproduct.used" type="text"/></td>
+							<td scope="col" class="market_place amount">&nbsp;</td>
+                                     <td scope="col" class="market_place amount">&nbsp;</td>
+						</tr>
+						</tbody>
+                           <tfoot>
+					<td colspan="6"><input type="button" id="addEditBtn" value="Add New Row" ng-click="addProduct(this)" ></input></td>
+					</tfoot>
+					</table>

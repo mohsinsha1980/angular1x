@@ -1,0 +1,21 @@
+[{
+	"otherFormats": "Hardcover",
+	"price": "R 300.00",
+	"newFrom": "R 334.99",
+	"usedFrom": "R 269.99"
+}, {
+	"otherFormats": "Paperback",
+	"price": "R 150.00",
+	"newFrom": "R 169.99",
+	"usedFrom": "R 119.99"
+}, {
+	"otherFormats": "Audio, CD, Audiobook, Unabridged",
+	"price": "R 80.00",
+	"newFrom": "R 89.00",
+	"usedFrom": "R 60.00"
+}, {
+	"otherFormats": "Unknown Binding",
+	"price": "R 50.00",
+	"newFrom": "R 50.00",
+	"usedFrom": "R 50.00"
+}]

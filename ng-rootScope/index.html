@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>Angular Service</title>
+<script src="angular.min.js"></script>
+</head>
+
+<body>
+<div>
+    <div ng-controller="myCtrl">
+    	<h1>{{ heading }}</h1>
+    	<p>{{ testMsg }} <strong><big>{{ remaingingTestMsg }}</big></strong></p>
+        <p>{{ anotherMessage }}</p>
+    </div>
+</div>
+<script>
+	var myApp = angular.module('myApp', [])
+	.run(function($rootScope) {
+		$rootScope.heading = "How to use '$rootScope'!";
+		$rootScope.message = "This message is defined inside $rootScope and calling from controller.";
+		$rootScope.anotherMessage = "This is another message.";
+	});
+	
+	myApp.controller('myCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+		$scope.testMsg = $rootScope.message;
+		$scope.remaingingTestMsg = "Isn't it exiting?";
+	}]);
+	
+</script>
+</body>
+</html>

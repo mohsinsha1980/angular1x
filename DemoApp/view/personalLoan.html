@@ -1,0 +1,73 @@
+<div data-ng-controller="personalLoanCtrl"  style="padding:20px" data-ng-hide="{{isLoanSection.hidden}}">
+	<form class="form-horizontal" role="form" ng-submit="saveCustomerDetails()">
+	  <div class="form-group">
+		<label class="control-label col-md-2" for="FullName">Full Name:</label>
+		<div class="col-md-4">
+		  <input type="text" class="form-control" id="FullName" placeholder="Rohit" data-ng-model="customer.fullName" required>
+		</div>
+	  </div>
+	  <div class="form-group">
+		<label class="control-label col-md-2" for="MobileNumber">Mobile Number:</label>
+		<div class="col-md-4">
+		  <input type="text" class="form-control" id="MobileNumber" placeholder="9823xxx174" data-ng-model="customer.MobileNumber">
+		</div>
+	  </div>
+	  <div class="form-group">
+		<label class="control-label col-md-2" for="State">State:</label>
+		<div class="col-md-4"> 
+		  <select data-ng-model="customer.State">
+			<option value=""></option>
+			<option data-ng-repeat="item in stateList" value="{{ item.stateCd }}">{{item.stateDesc }}</option>
+		<select>
+		</div>
+	  </div>
+	   <div class="form-group">
+		<label class="control-label col-md-2" for="Occupation">Occupation:</label>
+		<div class="col-md-4"> 
+		  <input type="text" class="form-control" id="Occupation" placeholder="Service" data-ng-model="customer.Occupation">
+		</div>
+	  </div>
+	   <div class="form-group" >
+		<label class="control-label col-md-2" for="Date">Date:</label>
+		<div class="col-md-4"> 
+			<p class="input-group">
+			  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+			  <span class="input-group-btn">
+				<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+			  </span>
+			</p>
+		</div>
+	  </div>
+	   <div class="form-group">
+		<label class="control-label col-md-2" for="Monthly">Monthly Net Take Home / ITR:</label>
+		<div class="col-md-4"> 
+		  <input type="text" class="form-control" id="Monthly" placeholder="50,000" data-ng-model="customer.Monthly">
+		</div>
+	  </div>
+	  <div class="form-group"> 
+		<div class="col-md-offset-2 col-md-4">
+		  <button type="submit" class="btn btn-default">Submit</button>
+		</div>
+        <div class="col-md-offset-2 col-md-4">
+		  <button type="button" data-ng-controller="creditCardLoanCtrl" class="btn btn-default" data-ng-click="secondControl()">call second controller</button>
+		</div>
+	  </div>
+	</form>
+	<table>
+		  <tr>
+			<th>Full Name</th>
+			<th>Occupation</th>
+			<th>Monthly Net Take Home </th>
+			<th> </th>
+			<th> </th>
+		  </tr>
+		  <tr data-ng-repeat="record in customerList">
+			<td>{{record.fullName}}</td>
+			<td>{{record.Occupation}}</td>
+			<td>{{record.Monthly}}</td>
+			<td><a  data-ng-click="editCustomerDetails($index)">Edit</a></td>
+			<td><a  data-ng-click="deleteCustomerDetails($index)">Delete</a></td>
+		  </tr>
+		</table>
+<div>
+ 

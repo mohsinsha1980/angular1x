@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html ng-app="plunker">
+<head>
+<meta charset="utf-8" />
+<title>AngularJS Plunker</title>
+<link href="style.css" rel="stylesheet" />
+<script src="jquery-2.1.4.js"></script>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+<div class="loader" style="position:absolute; left: 0; top: 0; width: 100%; height: 100%; color: #fff; background: rgba(0,0,0,0.9);">Loading</div>
+<input type="text" data-ng-model="filterText"/>
+<table border="1" style="border-collapse: collapse;">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Qualification</th>
+    <th>Edit</th>
+  </tr>
+  <tr ng-repeat="person in names | filter : { firstname : filterText}">
+    <td>{{ person.firstname }}</td>
+    <td>{{ person.lastname }}</td>
+    <td>
+        <table border="1" style="width:150px">
+          
+          <tr ng-repeat="Qua in person.qualification track by $index">
+            <td style="width:100%">{{Qua}}</td>
+          </tr>
+        </table>
+    </td>
+    <td><button type="button" data-ng-click="editData($index)">Edit</button></td>
+  </tr>
+  <tr ng-if="responseData === false">
+    <td colspan="2">{{ firstname }}</td>
+  </tr>
+</table>
+<br>
+<div>
+<label>First Name</label>
+<input type="text" data-ng-model="personDetails.firstname" />
+</div>
+<div>
+<label>Last Name</label>
+<input type="text" data-ng-model="personDetails.lastname" />
+</div>
+<div>
+<label>Age</label>
+<input type="text" data-ng-model="personDetails.Age" />
+</div>
+<div>
+<label>Qualification</label>
+<select>
+<option data-ng-repeat="item in personDetails.qualification track by $index">{{item}}</option>
+</select>
+<button type="button" data-ng-click="addData()">{{selected.btText}}</button>
+<button type="button" data-ng-click="clearData()">Clear</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+					<table id="product-table" width="70%" summary="A table listing various other formats for this product">
+						<thead class="header-row">
+						<tr class="header-row">
+							<th class="header-row-left" scope="col"><span>Other Formats</span></th>
+							<th scope="col" class="site amount header-row-mid" style="text-align:right"><span>price</span></th>
+							<th scope="col" class="market_place amount header-row-mid" style="text-align:right"><span>New from</span></th>
+							<th scope="col" class="market_place amount header-row-mid" style="text-align:right"><span>Used from</span></th>
+							<th scope="col" class="market_place amount header-row-mid"><span></span></th>
+							<th scope="col" class="market_place amount header-row-right"><span></span></th>
+						</tr>
+						</thead>
+						<tbody>
+                             		<tr ng-repeat="product in products track by $index">                                
+								<td ng-if="products.length-1 === $index" scope="col" class="book-title" style="width:45%;border-bottom-left-radius:9px;">{{product.name}}</td>
+                                		<td ng-if="$index < products.length-1" scope="col" class="book-title" style="width:45%;">{{product.name}}</td>
+				      			<td scope="col" class="site amount" style="text-align:right;width:15%;color:brown;font-weight:bold"><span>R&nbsp;{{product.price}}</span></td>
+								<td scope="col" class="market_place amount" style="text-align:right;width:15%;"><span>R&nbsp;{{product.new}}</span></td>
+								<td scope="col" class="market_place amount" style="text-align:right;width:15%;"><span>R&nbsp;{{product.used}}</span></td>
+                           			<td scope="col" class="market_place amount" style="width:5%;border-right:0px;"><div class="edit" ng-click="editProduct(product.productId)">&nbsp;</div></td>
+								<td ng-if="products.length-1 === $index"  scope="col" class="market_place amount" style="border-bottom-right-radius: 9px;border-left:0px;width:5%;"><div class="del" ng-click="deleteProduct(product.productId)">&nbsp;</div></td>
+                           			<td ng-if="$index < products.length-1"  scope="col" class="market_place amount" style="width:5%;border-left:0px;"><div class="del" ng-click="deleteProduct(product.productId)">&nbsp;</div></td>
+					 		</tr>                           
+						</tbody>                           
+					</table>
+                           <table id="input-table"  width="70%" style="padding-top:20px">
+						<tr>
+							<th scope="col" style="border:0px;padding:0px;width:45%;"><input id="name" style="width:90%;height:28px;border:1px solid #cecfd5;border-radius:6px;padding:0px"  ng-model="newproduct.name" type="text"/></th>
+				     			<td scope="col" class="market_place amount input-td" ><input class="input-amt" style="width:110%" id="price" ng-model="newproduct.price" type="text"/></td>
+							<td scope="col" class="market_place amount input-td" ><input class="input-amt" style="width:110%"  id="new" ng-model="newproduct.new" type="text"/></td>
+							<td scope="col" class="market_place amount input-td" ><input class="input-amt" style="width:105%"  id="used" ng-model="newproduct.used" type="text"/></td>
+							<td scope="col" class="market_place amount" style="border:0px;width:5%;">&nbsp;</td>
+                                     <td scope="col" class="market_place amount" style="border:0px;width:5%;">&nbsp;</td>
+						</tr>
+                                <tr>
+							<td colspan="6" style="border:0px;padding-left:0px"><input type="button" class="btn" id="addEditBtn" value="Add New Row" ng-click="addProduct(this)"/></td>
+						</tr>
+                           </table>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8" />
+<title>AngularJS Dan Wahlin</title>
+<style>
+	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak{ display: none !important; }
+</style>
+</head>
+
+<body>
+	<div ng-cloak>
+        <div ng-controller="myCtrl" ng-init="[{name='Shaikh', amount='10.00'}]">
+            <input type="text" ng-model="name"><br>
+            <input type="text" ng-model="amount"><br>
+            {{ name }} {{ amount | currency:'INR' }}<br>
+            <input type="button" ng-click="clickBtn()" value="click">
+        </div>
+    </div>
+	<script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

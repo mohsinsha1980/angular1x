@@ -1,0 +1,15 @@
+[
+	{
+  "firstname": "John",
+  "lastname": "William",
+  "Age" : "26",
+  "qualification" : ["Graduate","Post Graduate"]
+},
+	{
+  "firstname": "Tony",
+  "lastname": "White",
+  "Age" : "26",
+  "qualification" : ["Graduate","MBA-IT"]
+
+}
+]

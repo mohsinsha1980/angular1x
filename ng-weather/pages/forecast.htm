@@ -1,0 +1,20 @@
+<h1><small>Forecast for</small> {{ city }}</h1>
+<hr>
+<p><a href="#/">Back to Home</a></p>
+<hr>
+<div class="bl_days">
+	Days: <a href="#/forecast/2" ng-class="{'bg-primary': days === '2'}">2</a> | <a href="#/forecast/5" ng-class="{'bg-primary': days === '5'}">5</a> | <a href="#/forecast/7" ng-class="{'bg-primary': days === '7'}">7</a>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-4" ng-repeat="w in weatherResult.list">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ convertToDate(w.dt) | date: 'MMM d, y' }}</h3>
+            </div>
+            <div class="panel-body">
+                daytime tempreture: {{ convertToFahrenheit(w.temp.day) + "&deg; F" }}
+            </div>
+        </div>
+    </div>
+</div>

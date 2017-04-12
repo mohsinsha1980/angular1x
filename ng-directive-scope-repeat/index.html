@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8" />
+<title>AngularJS Plunker</title>
+<link rel="stylesheet/less" type="text/css" href="style.less" />
+<script src="less.min.js"></script>
+<script src="jquery-2.1.4.js"></script>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body>
+	<div ng-controller="myCtrl" class="container">
+    	<ul>
+    		<custom-directive ng-repeat="person in people" person-name="{{ person.name }}" person-object="person"></custom-directive>
+        </ul>
+    </div>
+    
+</body>
+</html>

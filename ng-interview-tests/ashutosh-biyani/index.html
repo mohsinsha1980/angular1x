@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exercise</title>
+<meta name="description" content="" />
+<link rel="shortcut icon">
+<link rel="stylesheet" href="css/framework_lite.css">
+<link rel="stylesheet" href="css/bootstrap.min.css"> 
+<script src="js/angular.min.js"></script>
+<script src="js/controllers/tableController.js"></script>
+<script src="js/services/tableService.js"></script>
+<script src="js/directives/tableDirective.js"></script>
+</head>
+<div  data-ng-app="mainApp"
+	data-ng-controller="mainController"
+	class="panel panel_chrome">
+	<div class="panel_header">
+		<h3>Other Formats</h3>
+	</div>
+	
+			<display-data-directive tabledata="items" edit="editRow();"></display-data-directive>
+					
+</div>
+
+</html>

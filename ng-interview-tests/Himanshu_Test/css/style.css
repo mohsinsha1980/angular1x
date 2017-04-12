@@ -1,0 +1,289 @@
+/* General */
+html {background-color:#fff; height:100%;}
+body {font:16px/26px Arial, Helvetica, sans-serif; width:1080px; padding:0 10px; margin:0 auto; background:#fff; color:#000;}
+a {color:#004b91; text-decoration:none;}
+a:visited {color:#136;}
+a:hover {color:#f60; text-decoration:underline;}
+a:active {color:#000;}
+
+.panel { 
+	box-shadow:none; 
+	padding: 60px 0 0;
+}
+.panel_header { 
+	background:#f3f3f3;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	position:relative;
+}
+	.panel_header h3 {     
+		font-size: 14px;
+		color: #212121; 
+		padding-left:8px;
+		margin: 0;
+		min-height: 32px;
+		line-height: 32px;
+		font-weight: bold;
+	}
+.panel_content { 
+	position: relative;
+    top: -33px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+	.panel_content table{ 
+		width:100%;
+		font-size:14px;
+	}
+	.panel_content table th{ 
+		padding-left:8px;
+		line-height: 32px;
+	}
+	.panel_content table th a{ 
+		color:#004a93;
+		text-decoration:none;
+		font-size: 14px;
+	}
+	.panel_content table th a:hover{ 
+		color:#004a93;
+		text-decoration:none;
+	}
+	.panel_content table td{ 
+		padding-left:8px;
+		line-height: 32px;
+	}
+	.panel_content table td span{
+		cursor:pointer;
+	}
+	.panel_content table tbody tr:last-child th{
+		border:0;
+	}
+	.panel_content table tbody tr th{ 
+		padding-left: 8px;
+		border-bottom: 1px solid #ccc;
+		line-height: 32px;
+	}
+	.panel_content table tbody td{ 
+		padding-left: 8px;
+		border-bottom: 1px dashed #ccc;
+		line-height: 32px;
+	}
+	
+	.panel_content table thead th + th:after{
+		content:"";
+		background:#f9d6be;
+		width:100.5%;
+		height:16px;
+		position:absolute;
+		left:0;
+		top:-16px;
+		border:1px solid #fa9144;
+		border-bottom:0;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+	.panel_content table thead th + th:before{
+		background:#f3f3f3;
+		content:"";
+		position:absolute;
+		left:-14px;
+		top:0;
+		width:15px;
+		height:38px;
+		border-right:1px solid #fa9144;
+	}
+	.panel_content table thead th + th{
+		background:#f9d6be;
+		text-align:right;
+		padding-right:8px;
+		position:relative;
+	}
+	
+	.panel_content table thead th + th  + th:after{
+		border:1px solid #ccc;
+		border-bottom:0;
+		background:#e9e9e9;
+		left: 15px;
+		width: 90.5%;
+	}
+	.panel_content table thead th + th  + th:before{
+		border-left:1px solid #fa9144;
+		border-right:1px solid #ccc;
+		left:0;
+	}
+	.panel_content table thead th + th + th{
+		background:#e9e9e9;
+	}
+	
+	.panel_content table thead th + th  + th + th:after{
+		border:1px solid #ccc;
+		border-bottom:0;
+		background:#e9e9e9;
+		width: 90.5%;
+	}
+	.panel_content table thead th + th  + th + th:before{
+		border-left:1px solid #ccc;
+		border-right:1px solid #ccc;
+		left:0;
+	}
+	.panel_content table thead th + th + th + th{
+		background:#e9e9e9;
+		border-right:1px solid #ccc;
+	}
+	
+	.panel_content table thead th + th  + th + th + th:before,
+	.panel_content table thead th + th  + th + th + th:after{
+		width:0;
+		border:0;
+	}
+	.panel_content table thead th + th + th + th + th{
+		background:#f3f3f3;
+		text-align:left;
+		padding-right:0;
+		border-left:0;
+		border-right:0;
+	}
+	
+	.panel_content table thead th + th  + th + th +th + th:before,
+	.panel_content table thead th + th  + th + th +th + th:after{
+		width:0;
+		border:0;
+	}
+	.panel_content table thead th + th + th + th + th + th{
+		background:#f3f3f3;
+		text-align:left;
+		padding-right:0;
+		border-left:0;
+		border-right:0;
+		border-top-right-radius: 8px;
+	}
+	
+	
+	.panel_content table tbody tr:last-child th + td,
+	.panel_content table tbody tr:last-child th + td +td ,
+	.panel_content table tbody tr:last-child th + td +td + td,
+	.panel_content table tbody tr:last-child th + td + td +td +td ,
+	.panel_content table tbody tr:last-child th + td +td +td +td +td{
+		border-bottom:0;
+	}
+	
+	.panel_content table tbody tr:last-child th + td:after{
+		content:"";
+		background:#f9d6be;
+		width:101%;
+		height:16px;
+		position:absolute;
+		left:0;
+		bottom:-16px;
+		border:1px solid #fa9144;
+		border-top:0;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+	.panel_content table tbody th + td:before {
+    background: #fff;
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 0;
+    width: 16px;
+    height: 38px;
+    border-right: 1px solid #fa9144;
+    /* border-bottom: 1px solid #ccc; */
+}
+	.panel_content table tbody th + td{
+		text-align:right;
+		padding-right:8px;
+		position:relative;
+		border-right:1px solid #fa9144;
+	}
+	
+	.panel_content table tbody tr:last-child th + td + td:after{
+		content:"";
+		background:#e9e9e9;
+		width:91%;
+		height:16px;
+		position:absolute;
+		left:15px;
+		bottom:-16px;
+		border:1px solid #ccc;
+		border-top:0;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+	.panel_content table tbody tr:last-child th + td + td:before {
+		border-bottom: 1px solid #ccc;
+	}
+	.panel_content table tbody th + td + td:before{
+		background:#fff;
+		content:"";
+		position:absolute;
+		left:0;
+		top:0;
+		width:15px;
+		height:38px;
+		border-right:1px solid #ccc;
+		border-bottom: 1px dashed #ccc;
+	}
+	.panel_content table tbody th + td +td{
+		text-align:right;
+		padding-right:8px;
+		position:relative;
+		border-right:1px solid #ccc;
+	}
+	
+	.panel_content table tbody tr:last-child th + td + td + td:after{
+		content:"";
+		background:#e9e9e9;
+		width:92%;
+		height:16px;
+		position:absolute;
+		left:15px;
+		bottom:-16px;
+		border:1px solid #ccc;
+		border-top:0;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+	.panel_content table tbody tr:last-child th + td + td + td:before {
+		border-bottom: 1px solid #ccc;
+	}
+	.panel_content table tbody th + td + td + td:before{
+		background:#fff;
+		content:"";
+		position:absolute;
+		left:0;
+		top:0;
+		width:15px;
+		height:38px;
+		border-right:1px solid #ccc;
+		border-bottom: 1px dashed #ccc;
+	}
+	.panel_content table tbody th + td +td +td{
+		text-align:right;
+		padding-right:8px;
+		position:relative;
+		border-right:1px solid #ccc;
+	}
+	
+	
+	.panel-inputs div {
+		padding-top:12px;
+	}
+	.panel-inputs div input {
+		border-radius:8px;
+		border: 1px solid #ccc;
+	}
+	.panel-inputs div input {
+		width: 44%;
+		margin-right: 18px;
+	}
+	.panel-inputs div input + input {
+		width: 14%;
+		margin-right: 16px;
+	}	
+	
+	.alert div {
+		position:absolute;
+		
+	}

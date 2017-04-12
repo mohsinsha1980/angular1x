@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Assignment</title>
+
+
+</head>
+
+<style type="text/css">
+
+table {
+color: #333;
+font-family: Helvetica, Arial, sans-serif;
+border-collapse:collapse; 
+border-spacing: 0;
+}		/* added custom font-family  */
+
+th {
+    background-color:  #f2f2f2;
+    color: black;
+}
+
+
+</style>
+<body ng-app="Uiassg"  ng-controller="UIController">
+<header>
+	<h1>UI Assignment</h1>
+</header>
+<section>
+			<div id="other_formats" class="panel panel_chrome">
+				<div class="panel_header">
+					
+				</div>
+				<div class="panel_content">                           
+				     <div product></div>                                  
+				</div>
+			</div>
+		
+</section>
+<footer>
+
+</footer>
+<!-- footer End Here  -->
+<script src="./js/jquery.1.10.2.js"></script>
+<script src="./js/angular.min.1.4.3.js"></script>
+<script src="./js/Ang-assign.js"></script>
+</body>
+</html>

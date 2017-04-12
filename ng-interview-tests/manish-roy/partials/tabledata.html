@@ -1,0 +1,51 @@
+<table summary="A table listing various other formats for this product">
+	<thead>
+		<tr>
+			<th scope="col"></th>
+			<th scope="col" class="site amount"><span>price</span></th>
+			<th scope="col" class="market_place amount"><span>New
+					from</span></th>
+			<th scope="col" class="market_place amount"><span>Used
+					from</span></th>
+			<th scope="col" class="market_place amount"><span>Edit</span></th>
+			<th scope="col" class="market_place amount"><span>Delete</span></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="active" ng-repeat="data in tableData">
+			<th scope="col"><a href="#">{{data.otherFormats}}</a></th>
+			<td scope="col" class="site amount"><span>{{data.price}}</span></td>
+			<td scope="col" class="market_place amount"><span>{{data.newFrom}}</span></td>
+			<td scope="col" class="market_place amount"><span>{{data.usedFrom}}</span></td>
+			<td scope="col" class="market_place amount"><span>
+					<button>
+						<img style="height: 20px; width: 20px;" src="./img/edit.jpg"
+							data-ng-click="editRow();">
+					</button>
+			</span></td>
+			<td scope="col" class="market_place amount"><span>D</span></td>
+		</tr>
+		<tr>
+			<td><input type="text" class="form-control"
+				data-ng-model="otherFormats" name="otherFormats" required />
+				<div data-ng-show="detailsForm.$submitted">
+					<span data-ng-show="detailsForm.otherFormats.$error.required">Required</span>
+				</div></td>
+			<td><input type="text" class="form-control"
+				data-ng-model="price" name="price" required />
+				<div data-ng-show="detailsForm.$submitted">
+					<span data-ng-show="detailsForm.price.$error.required">Required</span>
+				</div></td>
+			<td><input type="text" class="form-control"
+				data-ng-model="newFrom" name="newFrom" required />
+				<div data-ng-show="detailsForm.$submitted">
+					<span data-ng-show="detailsForm.newFrom.$error.required">Required</span>
+				</div></td>
+			<td><input type="text" class="form-control"
+				data-ng-model="usedFrom" name="usedFrom" required />
+				<div data-ng-show="detailsForm.$submitted">
+					<span data-ng-show="detailsForm.usedFrom.$error.required">Required</span>
+				</div></td>
+		</tr>
+	</tbody>
+</table>

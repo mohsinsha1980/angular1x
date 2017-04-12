@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>Angular Service</title>
+</head>
+
+<body>
+<div>
+	<h1>Check the console log!</h1>
+    <div ng-controller="myCtrl">
+        <div test1 test2> </div>
+    </div>
+</div>
+<script src="angular.min.js"></script>
+<script>
+	var myApp = angular.module('myApp', []);
+	myApp.factory('aProvider', function() {
+	   console.log("factory");
+	});
+	
+	
+	myApp.directive("test1", function() {
+		//Runs 4th
+		console.log("'test1' directive setup");
+		return {
+			//Runs 5th
+			compile: function() {console.log("directive compile");}
+		}
+	});
+	
+	
+	myApp.directive("test2", function() {
+		//Runs 3rd
+		console.log("'test2' directive setup");
+		return {
+			//Runs 7th
+			link: function() {console.log("directive link");}
+		}
+	});
+	
+	//Runs 2nd
+	myApp.run(function() {
+		console.log("app run");
+	});
+	
+	myApp.controller('myCtrl', function($scope) {
+		//Runs 6th
+		console.log("app controller");
+	});
+	
+	//Runs 1st
+	myApp.config( function() {
+		console.log("app config");
+	});
+</script>
+</body>
+</html>
