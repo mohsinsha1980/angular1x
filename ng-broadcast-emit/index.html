@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="bootstrap.min.css">
+	<style>
+		body,
+		h2{ padding: 20px; }
+	</style>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="myApp">
+<br>
+
+<div ng-controller="parentController as parent">
+	<h1>Parent Controller</h1>
+	<h2 style="background: #ccc;" ng-if="childContentData">{{ childContentData }}</h2>
+	<button ng-click="parentOnClick()">Send Down</button><br>
+	
+	<div ng-controller="childController as child">
+		<h1>Child Controller</h1>
+		<h2 style="background: #ccc;" ng-if="parentContentData">{{ parentContentData }}</h2>
+		<button ng-click="childOnClick()">Send Up</button><br>
+	</div>
+</div>
+</body>
+</html>
